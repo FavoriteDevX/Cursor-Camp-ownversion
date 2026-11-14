@@ -1,0 +1,26 @@
+{
+  "name": "little-plaza",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Little Plaza — a shared town square where every visitor is a cursor.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "relay": "node server/relay.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FavoriteDevX/Cursor-Camp-ownversion.git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/ws": "^8.18.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8"
+  },
+  "dependencies": {
+    "ws": "^8.23.0"
+  }
+}

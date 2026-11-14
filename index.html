@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title>Little Plaza — a town square where every visitor is a cursor</title>
+    <meta name="description" content="A shared little town square, live. Your cursor is you: play the bandstand, kick the ball, code at the coworking deck, chase high scores at the arcade and chat with whoever is nearby." />
+    <meta name="theme-color" content="#97C876" />
+    <meta property="og:title" content="Little Plaza" />
+    <meta property="og:description" content="A shared town square where every visitor is a cursor." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <canvas id="c" aria-label="The plaza, seen from above"></canvas>
+
+    <header id="hud" hidden>
+      <span class="chip brand">Little Plaza</span>
+      <span class="chip" id="count-chip" title=""><i id="dot"></i><span id="count">1 in the plaza</span></span>
+      <span class="spacer"></span>
+      <button class="chip btn" id="b-chat" type="button">Chat</button>
+      <button class="chip btn" id="b-album" type="button">Stickers <b id="fig-n">0/24</b></button>
+      <button class="chip btn" id="b-som" type="button">Sound</button>
+      <button class="chip btn" id="b-menu" type="button">Menu</button>
+    </header>
+
+    <div id="chatlog" aria-live="polite"></div>
+    <form id="chat" hidden autocomplete="off">
+      <input id="chat-in" type="text" maxlength="120" placeholder="Say something to whoever is nearby…" enterkeyhint="send" aria-label="Message" />
+      <button type="submit" id="chat-send">Send</button>
+    </form>
+
+    <div id="emotes" hidden role="group" aria-label="Emotes"></div>
+    <button id="b-sair-jogo" class="chip btn" type="button" hidden>Quit game</button>
+    <p id="hint" hidden></p>
+
+    <section id="start" class="veil">
+      <div class="card">
+        <h1>Little Plaza</h1>
+        <p class="lead">A little town square where every visitor is a cursor. No sign-up: just show up and wander.</p>
+        <p class="label">Pick your color</p>
+        <div class="swatches" id="sw-start" role="radiogroup" aria-label="Cursor color"></div>
+        <button class="primary" id="b-entrar" type="button">Enter the plaza</button>
+        <p class="small" id="start-hint">The site will capture your mouse so your cursor can roam the plaza. Press Esc to get it back.</p>
+        <p class="small">Chat is public and anonymous. Never share your full name, phone number, address or passwords.</p>
+      </div>
+    </section>
+
+    <section id="pause" class="veil" hidden>
+      <div class="card">
+        <h2>You stepped out</h2>
+        <button class="primary" id="b-voltar" type="button">Back to the plaza</button>
+        <div class="row">
+          <button class="ghost" id="p-album" type="button">Stickers</button>
+          <button class="ghost" id="p-ajuda" type="button">How it works</button>
+        </div>
+        <div class="row">
+          <button class="ghost" id="p-som" type="button">Sound: on</button>
+          <button class="ghost" id="p-chat" type="button">Chat: on</button>
+        </div>
+        <p class="label">Cursor color</p>
+        <div class="swatches" id="sw-pause" role="radiogroup" aria-label="Cursor color"></div>
+      </div>
+    </section>
+
+    <section id="album" class="veil" hidden>
+      <div class="card wide">
+        <h2>Sticker album <span id="album-n"></span></h2>
+        <p class="small">Each sticker is a keepsake of something you did in the plaza. They are saved in this browser.</p>
+        <div id="album-grid"></div>
+        <button class="primary" id="album-fechar" type="button">Close</button>
+      </div>
+    </section>
+
+    <section id="ajuda" class="veil" hidden>
+      <div class="card wide">
+        <h2>How it works</h2>
+        <ul class="help">
+          <li><b>Your cursor is you.</b> Move the mouse (or drag a finger, like a trackpad) to walk around. Everyone sees everyone, live.</li>
+          <li><b>Click</b> to act: toss a coin in the fountain, paint a tile, plant a flower, type on a laptop, start a game.</li>
+          <li><b>Enter</b> opens the chat. Only people near you can read your message, and it fades in seconds.</li>
+          <li><b>1 to 5</b> show emotes. <b>F</b> opens the album, <b>M</b> toggles sound, <b>Esc</b> opens the menu.</li>
+          <li><b>Explore.</b> Bandstand, fountain, playground, pitch, coworking deck, arcade, promenade. Some things are never announced.</li>
+        </ul>
+        <p class="small"><b>About the chat.</b> Messages are not stored. Links, e-mail addresses, phone numbers and profanity are replaced with "•••" automatically, but no filter is perfect: do not share personal details. You can turn the chat off in the menu.</p>
+        <p class="small" id="mode-note"></p>
+        <p class="small">Little Plaza is an independent project. The genre — a shared place where every visitor is a cursor — became widely known through Cursor Camp by Neal Agarwal (neal.fun). The name, art, map, sounds and code here are our own.</p>
+        <button class="primary" id="ajuda-fechar" type="button">Close</button>
+      </div>
+    </section>
+
+    <div id="toasts" aria-live="polite"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
