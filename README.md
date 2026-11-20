@@ -1,33 +1,57 @@
 # Little Plaza
 
-Uma praça compartilhada, em tempo real, onde cada visitante é um ponteiro. O site é todo em inglês; esta documentação está em português.
+A shared town square, live in the browser, where every visitor is a cursor.
 
-O visitante entra sem cadastro, anda pela praça com o mouse (ou com o dedo), mexe nas atrações, conversa por chat com quem está perto e coleciona figurinhas.
+No sign-up and no profiles: you show up, wander around with your mouse (or your finger), play with the attractions, chat with whoever is nearby and collect stickers.
 
-## Aviso de origem
+![The plaza: bandstand, fountain, coworking deck and tile mural](docs/screenshots/hero.jpg)
 
-Little Plaza é um projeto independente. O gênero, um lugar compartilhado em que cada visitante é um ponteiro, ficou conhecido com **Cursor Camp**, de Neal Agarwal ([neal.fun](https://neal.fun)). Daqui, o nome, a arte, o mapa, os sons e o código são próprios: nada foi copiado de lá.
+## Where it comes from
 
-## O que há na praça
+Little Plaza is an independent project. The genre, a shared place where every visitor is a cursor, became widely known through **Cursor Camp** by Neal Agarwal ([neal.fun](https://neal.fun)). The name, art, map, sounds and code here are our own; nothing was copied from it.
 
-| Lugar | O que se faz |
+## What's in the plaza
+
+| Place | What you do there |
 | --- | --- |
-| Bandstand (coreto) | O piso tem oito fatias; cada uma toca uma nota. Vários ponteiros fazem música juntos. |
-| Fountain (chafariz) | Entrar na água espirra. Clicar da beirada joga uma moeda; a contagem é de todos. |
-| Pigeons (pombos) | Voam quando alguém passa correndo e seguem quem tem pipoca. |
-| Popcorn cart | Esperar na marca rende um saquinho de pipoca. |
-| Playground | Gangorra (pesa para o lado com mais ponteiros), balanços (impulso no ritmo) e amarelinha. |
-| Pitch (campinho) | Bola com física, dois gols e placar compartilhado. |
-| Tiles (azulejos) | Mural coletivo: cada clique pinta um azulejo com a cor do visitante. |
-| Flowerbed (canteiro) | Cada clique planta uma flor. |
-| Coworking | Notebooks que "programam" e somam commits num telão, lousa para desenhar junto, cafezinho e o botão de deploy. |
-| Arcade (fliperama) | Três minijogos próprios (Popcorn Catch, Worm, Rally) com recorde compartilhado, e uma pista de dança. |
-| Chat | Enter abre o campo. Só quem está perto lê; a mensagem some em segundos. |
-| Stickers | 24 figurinhas, três delas secretas. Ficam guardadas no navegador. |
+| **Bandstand** | The floor has eight slices, and each one plays a note. Several cursors make music together. |
+| **Fountain** | Walking into the water splashes. Click from the rim to toss a coin; the wish count is shared by everyone. |
+| **Pigeons** | They take off when someone rushes past and follow anyone holding popcorn. |
+| **Popcorn cart** | Wait on the mark to get a bag of popcorn. You drop kernels as you walk. |
+| **Playground** | A seesaw that tips toward the side with more cursors, swings you pump in rhythm, and hopscotch. |
+| **Pitch** | A ball with physics, two goals and a shared scoreboard. |
+| **Tile mural** | A collaborative mural: each click paints a tile in your color. |
+| **Flowerbed** | Each click plants a flower everyone can see. |
+| **Coworking deck** | Laptops that "code" and add commits to a big screen, a shared whiteboard, coffee and a deploy button. |
+| **Arcade** | Three original mini-games (Popcorn Catch, Worm, Rally) with plaza-wide high scores, plus a dance floor. |
+| **Chat** | Press Enter to type. Only people near you can read it, and it fades in seconds. |
+| **Stickers** | 24 stickers, three of them secret. They are saved in your browser. |
 
-À noite (pelo relógio de quem visita) os postes acendem e aparecem vaga-lumes.
+At night (by the visitor's own clock) the street lamps come on and fireflies appear.
 
-## Rodar no seu computador
+## Screenshots
+
+| | |
+| --- | --- |
+| ![Coworking deck with laptops, whiteboard, coffee and deploy button](docs/screenshots/coworking.jpg) | ![Arcade with three machines and a dance floor](docs/screenshots/arcade.jpg) |
+| **Coworking deck.** Sit at a laptop to code, draw on the whiteboard, hit deploy. | **Arcade.** Three machines and a dance floor that plays notes. |
+| ![Popcorn Catch mini-game](docs/screenshots/minigame.jpg) | ![Seesaw and swings in the playground](docs/screenshots/playground.jpg) |
+| **Popcorn Catch**, one of the three mini-games. | **Playground.** Seesaw and swings. |
+| ![Football pitch with the ball in play](docs/screenshots/pitch.jpg) | ![Collaborative tile mural](docs/screenshots/tiles.jpg) |
+| **Pitch.** Kick the ball by running into it. | **Tile mural**, painted by everyone. |
+| ![The plaza at night with lamps and fireflies](docs/screenshots/night.jpg) | ![Sticker album](docs/screenshots/stickers.jpg) |
+| **Night.** Lamps, glowing screens and fireflies. | **Sticker album.** Keepsakes of what you did. |
+| ![Start screen](docs/screenshots/start.jpg) | <img src="docs/screenshots/mobile.jpg" alt="The plaza on a phone" width="260"> |
+| **Start screen.** Pick a color and walk in. | **On a phone**, your finger works like a trackpad. |
+
+## Controls
+
+- **Mouse:** move to walk. The site captures the mouse so your cursor can roam the whole plaza; **Esc** gives it back.
+- **Click** to act: toss a coin, paint a tile, plant a flower, type on a laptop, start a game.
+- **Enter** opens the chat. **1–5** show emotes. **F** opens the sticker album. **M** toggles sound.
+- **Touch:** drag like a trackpad; a quick tap is a click.
+
+## Run it locally
 
 ```bash
 npm install
@@ -37,88 +61,90 @@ npm install
 npm run dev
 ```
 
-Abra o endereço que aparecer. Sem mais nada, o site roda em **modo de demonstração**: os outros ponteiros são simulados (a barra de cima avisa) e o multiplayer só acontece entre abas do mesmo navegador.
+Open the address it prints. With nothing else running, the site starts in **demo mode**: the other cursors are simulated (the top bar says so) and real multiplayer only happens between tabs of the same browser.
 
-Para ver o multiplayer de verdade no seu computador, rode o servidor de tempo real em outro terminal:
+To try real multiplayer on your machine, start the real-time server in a second terminal:
 
 ```bash
 npm run relay
 ```
 
-E crie um arquivo `.env.local` com:
+Then create a `.env.local` file with:
 
 ```
 VITE_REALTIME_URL=ws://localhost:8787
 ```
 
-## Publicar
+## Deploy
 
-São duas peças.
+There are two pieces.
 
-**1. O site, na Vercel.** Importe o repositório. A Vercel reconhece o Vite sozinha (comando `npm run build`, pasta `dist`). O `vercel.json` só acrescenta cabeçalhos de segurança.
+**1. The website, on Vercel.** Import the repository. Vercel detects Vite on its own (build command `npm run build`, output folder `dist`). `vercel.json` only adds security headers.
 
-**2. O servidor de tempo real.** É o `server/relay.mjs`, um processo Node que fica ligado e mantém conexões WebSocket abertas. Serve qualquer hospedagem que rode Node continuamente (Render, Railway, Fly.io, uma VPS):
+**2. The real-time server.** This is `server/relay.mjs`, a Node process that stays up and keeps WebSocket connections open. Any host that runs Node continuously works (Render, Railway, Fly.io, a VPS):
 
-- instalar: `npm install`
-- iniciar: `npm run relay`
-- variável `ALLOWED_ORIGINS`: o endereço do site na Vercel, por exemplo `https://seu-site.vercel.app`. Sem ela o servidor aceita conexão de qualquer site.
+- install: `npm install`
+- start: `npm run relay`
+- set `ALLOWED_ORIGINS` to your site's address, for example `https://your-site.vercel.app`. Without it the server accepts connections from any website.
 
-Depois, na Vercel, crie a variável de ambiente `VITE_REALTIME_URL` com o endereço do servidor (`wss://...`) e publique de novo. Sem essa variável o site publicado fica em modo de demonstração.
+Then, on Vercel, add the environment variable `VITE_REALTIME_URL` with the server's address (`wss://...`) and redeploy. Without that variable the deployed site stays in demo mode.
 
-Outras variáveis do servidor estão no topo de `server/relay.mjs` (limite por sala, por endereço e total).
+More server settings (per-room, per-address and total limits) are documented at the top of `server/relay.mjs`.
 
-O servidor guarda o estado da praça (azulejos, flores, moedas, placar, commits, recordes) só na memória: se ele reiniciar, a praça recomeça em branco. Conversa nenhuma é guardada.
+The server keeps the plaza's state (tiles, flowers, coins, score, commits, high scores) in memory only: if it restarts, the plaza starts fresh. Chat messages are never stored.
 
-> A Vercel anunciou suporte a WebSocket em Functions em 2026. Este projeto não usa esse recurso: não foi possível ler a documentação oficial durante o desenvolvimento, e mesmo com ele seria preciso um armazenamento externo para os visitantes de instâncias diferentes se enxergarem.
+> Vercel announced WebSocket support for Functions in 2026. This project does not rely on it: those connections are time-limited, and visitors landing on different function instances would not see each other without an external store.
 
-## Segurança do chat
+## Chat safety
 
-O que já está feito:
+What is in place:
 
-- Toda mensagem passa pelas mesmas regras no navegador e no servidor (`shared/protocol.js`). O servidor nunca repassa o que recebeu: ele reconstrói a mensagem campo a campo.
-- Limite de 120 caracteres e de uma mensagem a cada 1,2 s por visitante, aplicado no servidor.
-- Links, e-mails, sequências de 8 ou mais dígitos e uma lista de palavrões (português e inglês) viram `•••`.
-- O texto é desenhado no canvas ou inserido como texto puro. Nunca vira HTML.
-- Nada é armazenado, e não existem nomes nem perfis.
-- O visitante pode desligar o chat no menu.
+- Every message goes through the same rules in the browser and on the server (`shared/protocol.js`). The server never forwards what it received as-is; it rebuilds each message field by field.
+- A 120-character limit and one message every 1.2 seconds per visitor, enforced on the server.
+- Links, e-mail addresses, runs of 8 or more digits and a list of profanity (English and Portuguese) are replaced with `•••`.
+- Text is drawn on the canvas or inserted as plain text. It never becomes HTML.
+- Nothing is stored, and there are no names or profiles.
+- Visitors can turn the chat off in the menu.
 
-O que **não** existe e precisa de decisão sua antes de divulgar o site:
+What does **not** exist yet, and needs a decision before you promote the site:
 
-- Moderação humana, denúncia, silenciar um visitante específico e banimento.
-- Verificação de idade. Um chat aberto e anônimo num site com cara de brinquedo atrai crianças.
-- Um filtro de palavras é fácil de driblar. Ele reduz o problema, não resolve.
+- Human moderation, reporting, muting a specific visitor, and bans.
+- Age checks. An open, anonymous chat on a playful-looking site attracts children.
+- A word filter is easy to get around. It reduces the problem; it does not solve it.
 
-## Endereços úteis para testar
+## Handy URLs for testing
 
-- `?mode=free`: não prende o mouse; a câmera anda quando o ponteiro encosta na borda.
-- `?hour=21`: força a hora do dia (para ver a noite).
-- `?room=nome`: abre uma praça separada.
-- `?debug`: expõe o jogo em `window.__pracinha` no console.
+- `?mode=free`: does not capture the mouse; the camera moves when the cursor reaches the edge.
+- `?hour=21`: forces the time of day (to see the night).
+- `?room=name`: opens a separate plaza.
+- `?debug`: exposes the game as `window.__pracinha` in the console.
 
-## Como o código está organizado
+## Project layout
 
 ```
-index.html            página e textos da interface
-shared/protocol.js    regras da rede e filtro do chat (site e servidor usam o mesmo arquivo)
-server/relay.mjs      servidor de tempo real
-src/main.ts           ponto de entrada
-src/game.ts           laço principal: entrada, rede, câmera, desenho
-src/ui.ts             telas em HTML: entrada, menu, álbum, chat, avisos
-src/input.ts          mouse preso, mouse solto e toque
-src/net/              transporte local (entre abas) e por WebSocket
-src/store.ts          estado compartilhado
-src/actors.ts         desenho dos ponteiros, expressões e balões de fala
-src/bots.ts           visitantes simulados do modo de demonstração
-src/album.ts          figurinhas
-src/audio.ts          todos os sons, sintetizados na hora (não há arquivo de áudio)
-src/arcade/           os três minijogos
-src/world/            cenário e uma classe por atração
+index.html            page and interface text
+shared/protocol.js    network rules and chat filter (used by both site and server)
+server/relay.mjs      real-time server
+src/main.ts           entry point
+src/game.ts           main loop: input, network, camera, drawing
+src/ui.ts             HTML screens: start, menu, album, chat, notifications
+src/input.ts          captured mouse, free mouse and touch
+src/net/              local transport (between tabs) and WebSocket transport
+src/store.ts          shared state
+src/actors.ts         drawing of cursors, emotes and speech bubbles
+src/bots.ts           simulated visitors for demo mode
+src/album.ts          stickers
+src/audio.ts          every sound, synthesized on the fly (there are no audio files)
+src/arcade/           the three mini-games
+src/world/            scenery and one class per attraction
 ```
 
-Para mudar o nome do site, troque "Little Plaza" em `index.html`. Para mudar cores, veja `src/config.ts`. Cada atração é um arquivo em `src/world/` que implementa a interface `Activity` de `src/types.ts`; para criar outra, escreva a classe e acrescente-a à lista em `src/game.ts`.
+Code comments are in Portuguese.
 
-## O que foi testado
+To rename the site, change "Little Plaza" in `index.html`. Colors live in `src/config.ts`. Each attraction is a file in `src/world/` that implements the `Activity` interface from `src/types.ts`; to add one, write the class and add it to the list in `src/game.ts`.
 
-Com um navegador automatizado: todas as atrações, o chat e o filtro, o álbum, a noite, o modo de toque em tela de celular, duas abas no modo de demonstração, três navegadores ligados ao servidor de tempo real (presença, chat, estado compartilhado, bola, gol, troca de anfitrião), e o build de produção servido com os cabeçalhos do `vercel.json`.
+## What has been tested
 
-Não foi testado: a publicação real na Vercel, o servidor numa hospedagem de verdade, navegadores além do Chromium, e a praça com muita gente ao mesmo tempo.
+With an automated browser: every attraction, the chat and its filter, the sticker album, night mode, touch controls on a phone-sized screen, two tabs in demo mode, three browsers connected to the real-time server (presence, chat, shared state, the ball, goals, host hand-off), and the production build served with the headers from `vercel.json`.
+
+Not tested yet: a real Vercel deployment, the server on a real host, browsers other than Chromium, and the plaza with many people at once.
